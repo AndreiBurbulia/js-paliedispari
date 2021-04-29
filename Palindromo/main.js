@@ -1,29 +1,10 @@
 
-/*
-// l'utente deve inserire una parola
-var parolaUtente = "ciaooaic"
-//creare una funzione che mi dica se la parola e palindroma
-
-var contrarioLista = [];
-for (i = 0; i < parolaUtente.length; i++) {
-    var contrario = parolaUtente[parolaUtente.length - i - 1]
-    contrarioLista.push(contrario);
-}
-
-var palindroma = 0;
-for (i = 0; i < contrarioLista.length; i++) {
-    if (contrarioLista[i] === parolaUtente[i]) {
-        palindroma++;
-    }
-}
-
-if (Number(palindroma) === Number(parolaUtente.length)) {
-    console.log("La parola è palindroma");
-} else {
-    console.log("La prola non è palindroma");
-}
-*/
-
+/**
+ * ## Controllo Parola palindroma
+ * Questa funzione accetta una stringa in entrata e va a verificare se la strinag inserita è palindroma
+ * @param {string} parola - Stringa da inserire per il controllo 
+ * @returns {boolean} Il risultato è un valore booleano 
+ */
 function parolaPalindroma(parola) {
     var contrarioParola = [];
     for (i = 0; i < parola.length; i++) {
@@ -44,5 +25,22 @@ function parolaPalindroma(parola) {
 
 }
 
-var prova = parolaPalindroma("andrei");
-console.log(prova);
+//faccio inserire all'utenteuna parola
+var controllo = true;
+while (controllo) {
+    var parolaUtente = prompt("Inserire la parola da verificare se è palindroma!")
+    if (isNaN(parolaUtente)) {
+        controllo = false;
+    }
+}
+
+//richiamo la funzione per controllare se la parola è palindroma
+var parolaVerificata = parolaPalindroma(parolaUtente);
+
+
+//verifico il risultato che mi ah dato la funzione e communico il risultato
+if (parolaVerificata) {
+    console.log("La parola è palindroma");
+} else {
+    console.log("La parola non è palindroma");
+}
